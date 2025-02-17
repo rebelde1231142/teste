@@ -1,8 +1,9 @@
+// filepath: /C:/Users/Aluno/Documents/GitHub/teste/App.js
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground , ScrollView } from 'react-native';
 import { Button, Card } from 'react-native-paper';
 
-export default function App() {
+export default function App({ navigation }) {
   return (
     <ImageBackground 
       source={{ uri: 'https://th.bing.com/th/id/OIP.Bxy5WTTLpn8UoWjx3sIxvgHaHf?rs=1&pid=ImgDetMain' }} 
@@ -25,13 +26,11 @@ export default function App() {
             </Text>
           </Card.Content>
           <Card.Actions>
-            <Button mode="contained" onPress={() => console.log('Clicado!')}>
+            <Button mode="contained" onPress={() => navigation.navigate('SecondScreen')}>
               Go somewhere
             </Button>
           </Card.Actions>
         </Card>
-
-          
 
         <Card style={styles.card2}>
           <Card.Cover source={{ uri: 'https://via.placeholder.com/150' }} />
@@ -43,17 +42,14 @@ export default function App() {
             </Text>
           </Card.Content>
           <Card.Actions>
-            <Button mode="contained" onPress={() => console.log('Clicado!')}>
+            <Button mode="contained" onPress={() => navigation.navigate('SecondScreen')}>
               Go somewhere
             </Button>
           </Card.Actions>
         </Card>
-        
-
       </View>
      </ScrollView>
     </ImageBackground>
-    
   );
 }
 
@@ -80,17 +76,14 @@ const styles = StyleSheet.create({
     alignItems: 'center', // Alinha verticalmente
     gap: 10, // Espaço entre os cards (disponível no React Native 0.71+)
     marginBottom: 20,
-    
   },
   card: {
     width: 230,
     backgroundColor: 'white',
-
   },
   card2: {
     width: 230,
     backgroundColor: 'white',
-
   },
   cardTitle: {
     fontSize: 18,
